@@ -18,6 +18,7 @@
         <javax.servlet-api.version>2.5</javax.servlet-api.version>
         <postgresql.version>42.2.18</postgresql.version>
         <junit.version>4.12</junit.version>
+        <spring.version>5.2.11.RELEASE</spring.version>
     </properties>
 
     <dependencies>
@@ -27,6 +28,20 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
+        </dependency>
+
+        <!-- Spring Beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Spring Context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
