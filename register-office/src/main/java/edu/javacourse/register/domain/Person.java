@@ -8,6 +8,13 @@ import java.util.List;
 @Table(name = "ro_person")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "sex", discriminatorType = DiscriminatorType.INTEGER)
+@NamedQueries({
+        @NamedQuery(name = "Person.findPersons",
+        query = "SELECT p FROM Person p " +
+                "LEFT JOIN FETCH p.passports ps " +
+                "LEFT JOIN FETCH p.birthCertificate bs " +
+                "WHERE p.personId = :personId")
+})
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
