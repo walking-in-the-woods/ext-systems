@@ -1,2 +1,5 @@
-package edu.javacourse.register.dao;public class MarriageDao {
+package edu.javacourse.register.dao;
+
+public class MarriageDao {
+
 }
