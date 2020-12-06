@@ -50,6 +50,12 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!-- Spring Web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!-- Spring JPA -->
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -86,7 +92,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-
         <dependency>
             <!-- Simple Logging Facade for Java - Binding -->
             <groupId>org.slf4j</groupId>
@@ -100,18 +105,21 @@
             <artifactId>jersey-container-servlet</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-
         <dependency>
             <!-- RESTful Web Services - Dependency injections -->
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-
         <dependency>
             <!-- RESTful Web Services - JSON tool -->
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-moxy</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-spring5</artifactId>
             <version>${jersey.version}</version>
         </dependency>
 
