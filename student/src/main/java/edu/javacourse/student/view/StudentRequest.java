@@ -1,48 +1,18 @@
-package edu.javacourse.student.domain;
+package edu.javacourse.student.view;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
-import java.util.List;
 
-@Entity
-@Table(name = "sr_student")
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "student_id")
-    private Long studentId;
-    @Column(name = "last_name")
+public class StudentRequest {
     private String lastName;
-    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "middle_name")
     private String middleName;
-    @Column(name = "date_of_birth")
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate dateOfBirth;
-    @Column(name = "passport_series")
     private String passportSeries;
-    @Column(name = "passport_number")
     private String passportNumber;
-    @Column(name = "passport_date")
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate passportDate;
-    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "student")
-    private List<StudentDocument> documents;
-
-    public Long getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
 
     public String getLastName() {
         return lastName;
@@ -100,11 +70,16 @@ public class Student {
         this.passportDate = passportDate;
     }
 
-    public List<StudentDocument> getDocuments() {
-        return documents;
-    }
-
-    public void setDocuments(List<StudentDocument> documents) {
-        this.documents = documents;
+    @Override
+    public String toString() {
+        return "StudentRequest{" +
+                "lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", passportSeries='" + passportSeries + '\'' +
+                ", passportNumber='" + passportNumber + '\'' +
+                ", passportDate=" + passportDate +
+                '}';
     }
 }

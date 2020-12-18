@@ -1,6 +1,15 @@
 package edu.javacourse.student.domain;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "sr_faculty")
@@ -10,7 +19,7 @@ public class Faculty {
     @Column(name = "faculty_id")
     private Long facultyId;
     @Column(name = "faculty_name")
-    private Long facultyName;
+    private String facultyName;
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "university_id")
     private University university;
@@ -23,11 +32,11 @@ public class Faculty {
         this.facultyId = facultyId;
     }
 
-    public Long getFacultyName() {
+    public String getFacultyName() {
         return facultyName;
     }
 
-    public void setFacultyName(Long facultyName) {
+    public void setFacultyName(String facultyName) {
         this.facultyName = facultyName;
     }
 

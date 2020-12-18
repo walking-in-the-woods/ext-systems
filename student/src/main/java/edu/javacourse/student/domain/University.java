@@ -19,7 +19,7 @@ public class University {
     @Column(name = "university_id")
     private Long universityId;
     @Column(name = "university_name")
-    private Long universityName;
+    private String universityName;
     @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, mappedBy = "university")
     private List<Faculty> faculties;
 
@@ -31,11 +31,11 @@ public class University {
         this.universityId = universityId;
     }
 
-    public Long getUniversityName() {
+    public String getUniversityName() {
         return universityName;
     }
 
-    public void setUniversityName(Long universityName) {
+    public void setUniversityName(String universityName) {
         this.universityName = universityName;
     }
 

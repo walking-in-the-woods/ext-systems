@@ -45,7 +45,7 @@
                 <!-- Automatic schema generation -->
                 <!-- none, create-only, drop, create, create-drop, validate, update -->
                 <!-- Do not use in large projects! -->
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.hbm2ddl.auto">none</prop>
             </props>
         </property>
     </bean>

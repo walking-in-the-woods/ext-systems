@@ -1,6 +1,16 @@
 package edu.javacourse.student.domain;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
@@ -9,9 +19,9 @@ public class StudentDocument {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "document_id")
-    private Long DocumentId;
+    private Long documentId;
     @Column(name = "document_number")
-    private Long DocumentNumber;
+    private String documentNumber;
     @Column(name = "document_date")
     private LocalDate documentDate;
     @Column(name = "expired_date")
@@ -27,19 +37,19 @@ public class StudentDocument {
     private StudentForm studentForm;
 
     public Long getDocumentId() {
-        return DocumentId;
+        return documentId;
     }
 
     public void setDocumentId(Long documentId) {
-        DocumentId = documentId;
+        documentId = documentId;
     }
 
-    public Long getDocumentNumber() {
-        return DocumentNumber;
+    public String getDocumentNumber() {
+        return documentNumber;
     }
 
-    public void setDocumentNumber(Long documentNumber) {
-        DocumentNumber = documentNumber;
+    public void setDocumentNumber(String documentNumber) {
+        documentNumber = documentNumber;
     }
 
     public LocalDate getDocumentDate() {
